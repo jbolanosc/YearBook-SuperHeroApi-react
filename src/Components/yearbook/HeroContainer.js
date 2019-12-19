@@ -15,8 +15,11 @@ export default function HeroContainer() {
       fontSize: "2rem"
     },
     loader: {
-      textAlign: "center",
-      fontSize: "1.5rem"
+      position: "absolute",
+      left: "50%",
+      top: "50%",
+      transform: "translate(-50%, -50%)",
+      fontSize: "1.6rem"
     }
   };
 
@@ -29,7 +32,7 @@ export default function HeroContainer() {
 
   async function fetchData() {
     const characters = [];
-    for (var i = 1; i <= 16; i++) {
+    for (var i = 1; i <= 22; i++) {
       const search = getRandomInt(1, 731);
       const result = await axios.get(
         "http://superheroapi.com/api.php/10211730710623459/" + search
@@ -47,7 +50,7 @@ export default function HeroContainer() {
       </div>
       <article style={styles.comic}>
         {isLoading ? (
-          <div  style={styles.loader}>
+          <div style={styles.loader}>
             <h1>Loading...</h1>
           </div>
         ) : (

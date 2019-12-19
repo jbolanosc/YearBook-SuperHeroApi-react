@@ -15,8 +15,6 @@ export default function Hero(props) {
       : props.character.appearance.race
   };
 
-  console.log(props);
-
   const styles = {
     comic: {
       display: "flex",
